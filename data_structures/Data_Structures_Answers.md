@@ -1,6 +1,7 @@
 Add your answers to the questions below.
 
 1. What is the runtime complexity of your `depth_first_for_each` method?
+ - O()
 
 2. What is the space complexity of your `depth_first_for_each` function?
 
