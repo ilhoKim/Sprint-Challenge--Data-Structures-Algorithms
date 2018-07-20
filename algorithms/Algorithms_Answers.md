@@ -10,3 +10,5 @@ g) O(1)
 
 Exercise II.
 a)
+b) Throw an egg at the n/2th floor. If the egg is broken, go (n/2)/2th floor down and throw again. if not broken, go (n/2)2th floor upper and throw it.
+Repeat until finding the exact floor.
