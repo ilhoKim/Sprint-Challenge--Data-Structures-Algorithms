@@ -6,7 +6,8 @@ class BinarySearchTree:
 
   def depth_first_for_each(self, cb):
     # traverse pre-order and run cb 'for each' node
-    
+    cb(self.value)
+
     # Terminate recursion condition
     if self.left is None and self.right is None:
       return
@@ -20,9 +21,17 @@ class BinarySearchTree:
       self.right.depth_first_for_each(cb(self.value))
 
 
-
   def breadth_first_for_each(self, cb):
-    pass
+    queue = [self]
+
+    while len(queue) > 0:
+      current = queue.pop(0)
+      cb(current.value)
+      if current.left is not None:
+        queue.append(current.left)
+      if current.right is not None:
+        queue.append(current.right)
+
 
   def insert(self, value):
     new_tree = BinarySearchTree(value)
