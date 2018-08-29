@@ -22,15 +22,26 @@ class BinarySearchTree:
 
 
   def breadth_first_for_each(self, cb):
-    queue = [self]
+    # initialize a queue
+    queue = []
+    # fill the root node
+    queue.append(self)
 
-    while len(queue) > 0:
+    # iterate
+    while len(queue) :
+      # pull out 'first in' from the queue
       current = queue.pop(0)
-      cb(current.value)
+      
+      # check if the node has left child. If so, put it in the tree
       if current.left is not None:
         queue.append(current.left)
+
+      # check if the node has right child. If so, put it in the tree
       if current.right is not None:
         queue.append(current.right)
+
+      # call the callback on current node value
+      cb(current.value)
 
 
   def insert(self, value):
